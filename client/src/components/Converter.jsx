@@ -18,7 +18,7 @@ const Converter = () => {
       .get("http://localhost:3000/kurzy", {
         params: {
           api_key: "aaaabbbbccccccc",
-          currency: "",
+          currency: "", //pripadne url parametre
         },
       })
       .then((response) => {
@@ -32,7 +32,7 @@ const Converter = () => {
         setAvailableCurrencies(currencies);
       })
       .catch((error) => {
-        console.error("Error fetching rates:", error);
+        console.error("Error fetchovania kurzov:", error);
       });
   }, []);
 
@@ -77,7 +77,6 @@ const Converter = () => {
   return (
     <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg max-w-full md:w-[700px] flex flex-col mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
-        {/* Input with label "Suma" */}
         <div className="flex flex-col w-full md:w-[45%]">
           <label htmlFor="amount" className="text-gray-700 font-semibold mb-2">
             Suma
@@ -143,7 +142,6 @@ const Converter = () => {
           &#8646;
         </button>
 
-        {/* Input with label "Prepočet" */}
         <div className="flex flex-col w-full md:w-[45%]">
           <label htmlFor="result" className="text-gray-700 font-semibold mb-2">
             Prepočet
